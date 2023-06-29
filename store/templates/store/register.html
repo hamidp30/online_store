@@ -1,0 +1,28 @@
+{% extends 'store/layout.html' %}
+{% block body %}
+<div class="container d-flex justify-content-center mt-4">
+<form class="border border-primary rounded p-3 col-md-8" action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <h3>Register Form</h3>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="Name">Name:</span>
+        <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="Name" name="name">
+    </div>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="Email">Email:</span>
+        <input type="email" class="form-control" placeholder="Email@info.com" aria-label="Email" aria-describedby="Email" name="email">
+    </div>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="Password" name="email"> Password:</span>
+        <input type="password" class="form-control" aria-label="Email" aria-describedby="Password" name="password">
+    </div>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="ConfirmPassword">Confirm password:</span>
+        <input type="password" class="form-control" aria-label="ConfirmPassword" aria-describedby="ConfirmPassword" name="confirmpassword">
+    </div>
+    <div class="input-group mb-4">
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+    </div>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'store/layout.html' %}
+{% block body %}
+<div class="container d-flex justify-content-center mt-4">
+    {% if message %}
+    <div>{{ message }}</div>
+    {% endif %}
+<form class="border border-primary rounded p-3 col-md-6" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    <h3>Login Form</h3>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="Email">Email:</span>
+        <input type="email" class="form-control" aria-label="Email" aria-describedby="Email" name="email">
+    </div>
+    <div class="input-group mb-4">
+        <span class="input-group-text" id="Password"> Password:</span>
+        <input type="password" class="form-control" aria-label="Email" aria-describedby="Password" name="password">
+    </div>
+    <div class="input-group mb-4">
+        <button type="submit" class="btn btn-outline-primary">Login</button>
+    </div>
+</form>
+</div>
+{% endblock %}

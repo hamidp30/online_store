@@ -1,0 +1,29 @@
+{% extends 'store/layout.html' %}
+{% block body %}
+<div class="container mt-5">
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product</th>
+        <th scope="col">QTY</th>
+        <th scope="col">Total amount</th>
+        <th scope="col">Date</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for Order in Orders%}
+      <tr>
+        <th scope="row">{{Order.id}}</th>
+        <td>{{Order.ProdictID.NameProduct}}</td>
+        <td>{{Order.Number}}</td>
+        <td>{{Order.TotalPrice}}</td>
+        <td>{{Order.TimeOrder}}</td>
+        <td>{{Order.Status}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

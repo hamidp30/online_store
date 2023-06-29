@@ -1,0 +1,79 @@
+{% extends 'store/layout.html' %}
+{% block body %}
+<div class="container mt-5">
+    {% if puser %}
+    <div id="profile">
+    <div class="m-5 g-2">
+      <form action="{% url 'profilesave'  %}" method="POST"> 
+        {% csrf_token %} 
+        <div class="col-md">
+          <div class="form-floating">
+            <input type="text" readonly class="form-control" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.username}}">
+            <label for="floatingInputGrid">User Name</label>
+          </div>
+        </div>
+        <div class="col-md mt-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="FirstName" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.first_name}}">
+              <label for="floatingInputGrid">First Name</label>
+            </div>
+          </div>
+          <div class="col-md mt-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="LastName" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.last_name}}">
+              <label for="floatingInputGrid">Last Name</label>
+            </div>
+          </div>
+          <div class="col-md mt-3">
+            <div class="form-floating">
+              <input type="email" class="form-control" name="Email" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.email}}">
+              <label for="floatingInputGrid">Email address</label>
+            </div>
+          </div>
+          <div class="col-md mt-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" name="Address" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.Address}}">
+              <label for="floatingInputGrid">Address</label>
+            </div>
+          </div>
+          <div class="col-md mt-3">
+            <div class="form-floating">
+              <input type="tel" class="form-control" name="ZipCode" id="floatingInputGrid" placeholder="name@example.com" value="{{puser.ZipCode}}">
+              <label for="floatingInputGrid">Zip Code</label>
+            </div>
+          </div>
+          <div class="col-md mt-3">
+            <div class="form-floating">
+                <button type="submit" id="floatingInputGrid" class="btn btn-primary m-5" onclick="bccuy(`{{Product.id}}`)">Save</button>
+              <label for="floatingInputGrid">Save Changes?</label>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% elif search %}
+        {%for product in search%}
+        <div class="col-sm-4 mb-3">
+            <div class="card">
+              <img src="{{product.Img}}" class="img-fluid rounded-top" alt="">
+              <div class="card-body">
+                <h3 class="card-title">{{product.NameProduct}}</h3>
+                <p class="card-text">{{product.NameProduct}}...</p>
+                <h2 class="card-text">$ {{product.Price}}</h2>
+                <a name="" id="" class="btn btn-outline-success w-100" href="{% url 'product' product.id %} " role="button">Buy</a>
+              </div>
+            </div>
+          </div>
+        {% empty  %}
+            <h2>Not Result</h2>
+        {% endfor %}
+    {% else %}
+          <h3>About</h3>
+          <h4>Hamidreza Ebrahimi</h4>
+          <h5>Front-End & back-End web dev</h5>
+          <P>email: hamidrezaebrahimi67@gmail.com</P>
+          <P>whatsapp: +989172232098</P>
+          <P>instagram: @hamidreza_1305</P>
+    {% endif %}
+</div>
+{% endblock %}
