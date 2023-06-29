@@ -5,7 +5,7 @@
 > Author's Name: HamidrezaEbrahimi
 
 
-Hello, this website is an online store programmed with Python, Django and JavaScript, which is completely different from my previous projects, we have explained the differences below.
+Hello, this website is an online store programmed with Python, Django and JavaScript.
 
 ## Summary of features and distinctions:
 1. Using Bootstrap 5 (different from other projects)
@@ -47,4 +47,4 @@ In this project, because we wanted to change the admin panel to our liking, we h
 ## License:
 * by Hamidreza Ebrahimi
 * email: hamidrezaebrahimi67@gmail.com
-* linkedin: hamidrezaebrahimi1305
+* linkedin: hamidrezaebrahimi305
